@@ -1,0 +1,38 @@
+{
+  "name": "app-notes",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --workspaces=app",
+    "start": "npm run start --workspaces=api",
+    "dev:api": "npm run build && npm run dev --workspaces=api"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "./node_modules/standard/eslintrc.json"
+    ],
+    "env": {
+      "jest": true,
+      "cypress/globals": true
+    },
+    "plugins": [
+      "cypress"
+    ]
+  },
+  "devDependencies": {
+    "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-cypress": "^2.12.1",
+    "standard": "17.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
